@@ -11,6 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/','ProductController@index');
+Route::get('/login','Auth\AuthController@getLogin');
+Route::post('/login','Auth\AuthController@postLogin');
+Route::get('/logout', 'Auth\AuthController@getLogout');
+
+Route::post('/register',"Auth\AuthController@postRegister");
+
+Route::get('/cart','OrderController@checkout');
+Route::post('/order/store','OrderController@store');
