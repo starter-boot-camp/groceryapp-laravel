@@ -21,62 +21,23 @@
           Amount (&#8377;)
         </th>
       </tr>
+      {{$counter = 0}}
+      @foreach($products as $product)
       <tr>
         <td>
-          1
+          {{$counter++}}
         </td>
         <td>
-          Potatoes
+          {{$product->name}}
         </td>
         <td>
-          2 Kg
+          1 Kg
         </td>
         <td>
-          &#8377; 40
+          &#8377; {{$product->amount}}
         </td>
       </tr>
-      <tr>
-        <td>
-          1
-        </td>
-        <td>
-          Potatoes
-        </td>
-        <td>
-          2 Kg
-        </td>
-        <td>
-          &#8377; 40
-        </td>
-      </tr>
-      <tr>
-        <td>
-          1
-        </td>
-        <td>
-          Potatoes
-        </td>
-        <td>
-          2 Kg
-        </td>
-        <td>
-          &#8377; 40
-        </td>
-      </tr>
-      <tr>
-        <td>
-          1
-        </td>
-        <td>
-          Potatoes
-        </td>
-        <td>
-          2 Kg
-        </td>
-        <td>
-          &#8377; 40
-        </td>
-      </tr>
+      @endforeach
       <tr>
         <td colspan="3">
           <p class="text-primary text-right h4">

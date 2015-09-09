@@ -23,3 +23,4 @@ Route::post('/register',"Auth\AuthController@postRegister");
 
 Route::get('/cart','OrderController@checkout');
 Route::post('/order/store','OrderController@store');
+Route::get('/addtocart/{id}','OrderController@addToCart');

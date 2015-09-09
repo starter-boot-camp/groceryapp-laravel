@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Product;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -14,9 +15,21 @@ class OrderController extends Controller
      *
      * @return Response
      */
-    public function checkout()
+    public function checkout(Request $request)
     {
-        //
+        $products = $request->session()->get('checkout.cart');
+        return view('cart',compact('products'));
+    }
+
+    public function addToCart(Request $request, $id)
+    {
+      $product = Product::find($id);
+      $cart = $request->session()->get('checkout.cart',array());
+      if(!in_array($product,$cart))
+      {
+        $request->session()->push('checkout.cart',$cart);
+      }
+      return redirect('/');
     }
 
     /**

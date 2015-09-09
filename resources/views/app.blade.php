@@ -67,7 +67,7 @@
                   <button type="submit" class="btn btn-default">Submit</button>
                 </form>
                 <ul class="nav navbar-nav navbar-right">
-                  <li><a href="{{ action('OrderController@checkout') }}"> <span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+                  <li><a href="{{ action('OrderController@checkout') }}"> <span class="glyphicon glyphicon-shopping-cart"></span> Cart ({{count(session('checkout.cart'))}}) </a></li>
                   <li class="dropdown">
                     <a href="{{ Auth::check() ? '/logout' : '/login'  }}" role="button" aria-haspopup="true" aria-expanded="false">{{Auth::check() ? "Logout" : "Login"}}</a>
                   </li>

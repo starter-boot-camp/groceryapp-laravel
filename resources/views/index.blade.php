@@ -33,7 +33,7 @@
                     <p>{{ $Productvar->description}}</p>
                     <p>
                         <span class="h3">&#8377;{{ $Productvar->amount}} /kg </span> <br>
-                        <a href="#" class="btn btn-primary btn-block">Add to cart</a>
+                        <a href="/addtocart/{{$Productvar->id}}" class="btn btn-primary btn-block {{in_array($Productvar,session('checkout.cart')) ? 'disabled' : ''}}">Add to cart</a>
                     </p>
                 </div>
             </div>
@@ -43,4 +43,4 @@
     </div>
 
 
-  @endsection
+  @stop

@@ -14,9 +14,9 @@ class ProductController extends Controller
      *
      * @return Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        // $request->session()->put('checkout.cart',array());
         $products = Product::all();
         return view('index',compact('products'));
     }
